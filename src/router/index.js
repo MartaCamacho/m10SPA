@@ -1,6 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
+import Botiga from '../views/Botiga.vue';
+import Clients from '../views/Clients.vue';
+import ClientsDetalls from '../views/ClientsDetalls.vue';
+import Magatzem from '../views/Magatzem.vue';
+import Proveidors from '../views/Proveidors.vue';
 
 Vue.use(VueRouter)
 
@@ -13,29 +18,34 @@ const routes = [
   {
     path: '/botiga',
     name: 'Botiga',
-    component: () => import(/* webpackChunkName: "botiga" */ '../views/Botiga.vue')
+    component: Botiga
   },
   {
     path: '/clients',
     name: 'Clients',
-    component: () => import(/* webpackChunkName: "clients" */ '../views/Clients.vue')
+    component: Clients
   },
   {
     path: '/magatzem',
     name: 'Magatzem',
-    component: () => import(/* webpackChunkName: "magatzem" */ '../views/Magatzem.vue')
+    component: Magatzem
   },
   {
     path: '/proveidors',
     name: 'Proveidors',
-    component: () => import(/* webpackChunkName: "proveidors" */ '../views/Proveidors.vue')
+    component: Proveidors
+  },
+  {
+    path: '/clients/:id',
+    name: 'ClientsDetalls',
+    component: ClientsDetalls
   }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;

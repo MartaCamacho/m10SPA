@@ -4,5 +4,5 @@ export default {
   name: 'Clients',
   components: {
     ClientsComponent
-  }
+  },
 }
