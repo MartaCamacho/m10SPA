@@ -6,6 +6,8 @@ import Clients from '../views/Clients.vue';
 import ClientsDetalls from '../views/ClientsDetalls.vue';
 import Magatzem from '../views/Magatzem.vue';
 import Proveidors from '../views/Proveidors.vue';
+import AlimentacioComponent from '../components/AlimentacioComponent.vue';
+import CongelatsComponent from '../components/CongelatsComponent.vue';
 
 Vue.use(VueRouter)
 
@@ -18,7 +20,17 @@ const routes = [
   {
     path: '/botiga',
     name: 'Botiga',
-    component: Botiga
+    component: Botiga,
+    children: [
+      {
+      path: 'alimentacio',
+      component: AlimentacioComponent
+      },
+      {
+      path: 'congelats',
+      component: CongelatsComponent
+      }
+  ]
   },
   {
     path: '/clients',
